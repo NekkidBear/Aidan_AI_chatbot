@@ -1,7 +1,7 @@
 import tkinter as tk
 
 
-def display_screen():
+def display_screen(root):
     # Create the main window
     root = tk.Tk()
 
