@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd7ea335-5c35-4279-8f58-20d6e0a087e0" name="Changes" comment="added pre-rigged blender model for testing and updated variable names">
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chatbot Engine.py" beforeDir="false" afterPath="$PROJECT_DIR$/chatbot_engine.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/display_screen.py" beforeDir="false" afterPath="$PROJECT_DIR$/display_screen.py" afterDir="false" />
-    </list>
+    <list default="true" id="fd7ea335-5c35-4279-8f58-20d6e0a087e0" name="Changes" comment="creating main.py and integrating modules" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -147,7 +142,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701365862191</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="creating main.py and integrating modules">
+      <option name="closed" value="true" />
+      <created>1701367353319</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1701367353321</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -164,6 +167,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="updating environment and installing dependencies." />
     <MESSAGE value="added pre-rigged blender model for testing and updated variable names" />
-    <option name="LAST_COMMIT_MESSAGE" value="added pre-rigged blender model for testing and updated variable names" />
+    <MESSAGE value="creating main.py and integrating modules" />
+    <option name="LAST_COMMIT_MESSAGE" value="creating main.py and integrating modules" />
   </component>
 </project>
