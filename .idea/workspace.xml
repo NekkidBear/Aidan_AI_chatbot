@@ -4,14 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd7ea335-5c35-4279-8f58-20d6e0a087e0" name="Changes" comment="updating environment and installing dependencies.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="fd7ea335-5c35-4279-8f58-20d6e0a087e0" name="Changes" comment="added pre-rigged blender model for testing and updated variable names">
       <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="origin/main" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -71,7 +73,47 @@
       <option name="project" value="LOCAL" />
       <updated>1701359116745</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="added pre-rigged blender model for testing and updated variable names">
+      <option name="closed" value="true" />
+      <created>1701361760629</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1701361760629</updated>
+    </task>
+    <task id="LOCAL-00005" summary="added pre-rigged blender model for testing and updated variable names">
+      <option name="closed" value="true" />
+      <created>1701361782324</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1701361782324</updated>
+    </task>
+    <task id="LOCAL-00006" summary="added pre-rigged blender model for testing and updated variable names">
+      <option name="closed" value="true" />
+      <created>1701361795631</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1701361795631</updated>
+    </task>
+    <task id="LOCAL-00007" summary="added pre-rigged blender model for testing and updated variable names">
+      <option name="closed" value="true" />
+      <created>1701362011023</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1701362011023</updated>
+    </task>
+    <task id="LOCAL-00008" summary="added pre-rigged blender model for testing and updated variable names">
+      <option name="closed" value="true" />
+      <created>1701362269522</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1701362269522</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -87,6 +129,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="updating environment and installing dependencies." />
-    <option name="LAST_COMMIT_MESSAGE" value="updating environment and installing dependencies." />
+    <MESSAGE value="added pre-rigged blender model for testing and updated variable names" />
+    <option name="LAST_COMMIT_MESSAGE" value="added pre-rigged blender model for testing and updated variable names" />
   </component>
 </project>
