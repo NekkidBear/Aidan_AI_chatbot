@@ -1,0 +1,2 @@
+pyttsx3~=2.90
+transformers~=4.35.2
