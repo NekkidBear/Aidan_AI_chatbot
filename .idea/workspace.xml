@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd7ea335-5c35-4279-8f58-20d6e0a087e0" name="Changes" comment="added pre-rigged blender model for testing and updated variable names" />
+    <list default="true" id="fd7ea335-5c35-4279-8f58-20d6e0a087e0" name="Changes" comment="added pre-rigged blender model for testing and updated variable names">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chatbot Engine.py" beforeDir="false" afterPath="$PROJECT_DIR$/Chatbot Engine.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/display_screen.py" beforeDir="false" afterPath="$PROJECT_DIR$/display_screen.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
