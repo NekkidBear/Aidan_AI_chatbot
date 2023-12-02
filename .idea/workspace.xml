@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ac172a6-bbe8-44c4-a29d-37ed606d7190" name="Changes" comment="refactoring to refine display_screen.py">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/display_screen.py" beforeDir="false" afterPath="$PROJECT_DIR$/display_screen.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-    </list>
+    <list default="true" id="1ac172a6-bbe8-44c4-a29d-37ed606d7190" name="Changes" comment="add default image to display_screen.py and main.py" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -106,14 +102,32 @@
       <option name="project" value="LOCAL" />
       <updated>1701557319886</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="adding default display image to main.py">
+      <option name="closed" value="true" />
+      <created>1701558656458</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1701558656458</updated>
+    </task>
+    <task id="LOCAL-00009" summary="add default image to display_screen.py and main.py">
+      <option name="closed" value="true" />
+      <created>1701559624936</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1701559624936</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="recreating venv to ensure proper package installation" />
     <MESSAGE value="refactoring to refine display_screen.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactoring to refine display_screen.py" />
+    <MESSAGE value="adding default display image to main.py" />
+    <MESSAGE value="add default image to display_screen.py and main.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="add default image to display_screen.py and main.py" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -129,7 +143,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/display_screen.py</url>
-          <line>26</line>
+          <line>30</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
