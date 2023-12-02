@@ -13,6 +13,7 @@ class MainApp:
         # Start the chatbot engine and tkinter display
         # self.chatbot_engine.start()
         self.display_screen.start()
+        self.display_screen.load_image("assets\\graphics\\Aidan Interactive AI avatar.png")
 
     def update(self):
         # Update the chatbot engine and tkinter display
