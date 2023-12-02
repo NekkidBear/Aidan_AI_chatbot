@@ -2,8 +2,6 @@ import tkinter as tk
 
 
 def display_screen(root):
-    # Create the main window
-    root = tk.Tk()
 
     # Set the window title
     root.title("Chatbot")
