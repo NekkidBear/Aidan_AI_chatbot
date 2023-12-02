@@ -3,6 +3,7 @@ import pyttsx3
 from transformers import pipeline
 import subprocess
 
+
 def chatbot_engine():
     # Initialize speech recognition engine
     r = sr.Recognizer()
@@ -25,27 +26,32 @@ def chatbot_engine():
         try:
             audio = r.listen(source)
         except sr.UnknownValueError:
-            print("Sorry, I could not understand the audio")
+            engine.say("I'm sorry, I didn't understand that. Come again?")
+            engine.runAndWait()
             return
-        except sr.RequestError as e:
-            print(f"Could not request results from Google Speech Recognition service; {e}")
+        except sr.RequestError:
+            engine.say("Oops, I spaced out for a moment. Could you please repeat what you just said?")
+            engine.runAndWait()
             return
 
     # Convert speech to text
     try:
         text = r.recognize_google(audio)
     except sr.UnknownValueError:
-        print("Google Speech Recognition could not understand the audio")
+        engine.say("I'm sorry what? Could you repeat that?")
+        engine.runAndWait()
         return
-    except sr.RequestError as e:
-        print(f"Could not request results from Google Speech Recognition service; {e}")
+    except sr.RequestError:
+        engine.say("Hang on. My brain is still catching up. Could you tell me that again?")
+        engine.runAndWait()
         return
 
     # Generate continuation of text using GPT
     try:
         generated_text = generator(text, max_length=100)[0]['generated_text']
-    except Exception as e:
-        print(f"An error occurred while generating text: {e}")
+    except RuntimeError:
+        engine.say("I don't know what to say. Could you please try again?")
+        engine.runAndWait()
         return
 
     # Convert text to speech
