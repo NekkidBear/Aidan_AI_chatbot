@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ac172a6-bbe8-44c4-a29d-37ed606d7190" name="Changes" comment="recreating venv to ensure proper package installation">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/display_screen.py" beforeDir="false" afterPath="$PROJECT_DIR$/display_screen.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+    <list default="true" id="1ac172a6-bbe8-44c4-a29d-37ed606d7190" name="Changes" comment="refactoring to refine display_screen.py">
+      <change beforePath="$PROJECT_DIR$/Igor/blender file.blend" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiden character ginger for animation .glb" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,12 +85,21 @@
       <option name="project" value="LOCAL" />
       <updated>1701545069680</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="refactoring to refine display_screen.py">
+      <option name="closed" value="true" />
+      <created>1701548346874</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1701548346875</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="recreating venv to ensure proper package installation" />
-    <option name="LAST_COMMIT_MESSAGE" value="recreating venv to ensure proper package installation" />
+    <MESSAGE value="refactoring to refine display_screen.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactoring to refine display_screen.py" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
