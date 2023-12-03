@@ -9,9 +9,10 @@ class DisplayScreen:
         self.root = root
 
     def load_image(self, image_path, frame):
+        frame.update_idletasks()  # Ensure that the frame has been displayed
         img = Image.open(image_path)
         img_width, img_height = img.size
-        max_width, max_height = frame.winfo_screenwidth(), frame.winfo_screenheight()
+        max_width, max_height = frame.winfo_width(), frame.winfo_height()
         scale = min(max_width / img_width, max_height / img_height)
         new_width, new_height = int(img_width * scale), int(img_height * scale)
         img = img.resize((new_width, new_height), Image.LANCZOS)
