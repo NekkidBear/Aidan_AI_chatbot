@@ -16,11 +16,11 @@ class MainApp:
 
         # create a label widget with white text inside the image frame
         character_label = tk.Label(self.image_frame, text="Character Image", fg="white")
-        character_label.pack()
+        character_label.grid()
         web_label = tk.Label(self.web_frame, text="Web browser", fg="white")
-        web_label.pack()
+        web_label.grid()
         chat_label = tk.Label(self.chat_frame, text="Text Transcript", fg="White")
-        chat_label.pack()
+        chat_label.grid()
 
         # Position the frames in the grid
         self.image_frame.grid(row=0, column=0, rowspan=4, sticky='nsew')
