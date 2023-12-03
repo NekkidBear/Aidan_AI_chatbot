@@ -1,7 +1,7 @@
 import speech_recognition as sr
 import pyttsx3
+from transformers import pipeline
 import subprocess
-from freegpt import freeGPT
 
 
 def chatbot_engine():
@@ -12,7 +12,7 @@ def chatbot_engine():
     engine = pyttsx3.init()
 
     # Initialize GPT model
-    generator = freeGPT()
+    generator = pipeline('text-generation', model='EleutherAI/gpt-neo-2.7B')
 
     # prompt the user for an audio response
     print("Ask me a question using your microphone")
@@ -48,7 +48,7 @@ def chatbot_engine():
 
     # Generate continuation of text using GPT
     try:
-        generated_text = generator.generate(text, max_length=100)
+        generated_text = generator(text, max_length=100)[0]['generated_text']
     except RuntimeError:
         engine.say("I don't know what to say. Could you please try again?")
         engine.runAndWait()
