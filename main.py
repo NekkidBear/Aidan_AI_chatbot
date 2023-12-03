@@ -23,15 +23,18 @@ class MainApp:
         chat_label.grid()
 
         # Position the frames in the grid
-        self.image_frame.grid(row=0, column=0, rowspan=4, sticky='nsew')
-        self.web_frame.grid(row=0, column=1, columnspan=3, rowspan=3, sticky='nsew')
-        self.chat_frame.grid(row=3, column=1, columnspan=3, sticky='nsew')
+        self.web_frame.grid(row=0, column=0, columnspan=2, rowspan=3, sticky='nsew')
+        self.chat_frame.grid(row=3, column=0, columnspan=2, sticky='nsew')
+        self.image_frame.grid(row=0, column=2, rowspan=4, columnspan=2, sticky='nsew')
 
         # Configure the grid to distribute space between frames
         for i in range(4):
             root.grid_rowconfigure(i, weight=1)
-            if i > 0:
+        for i in range(3):
+            if i < 2:
                 root.grid_columnconfigure(i, weight=1)
+            else:
+                root.grid_columnconfigure(i, weight=2)
 
     def start(self):
         # Start the chatbot engine and tkinter display
