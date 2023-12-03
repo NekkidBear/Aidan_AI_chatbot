@@ -1,7 +1,17 @@
 import speech_recognition as sr
 import pyttsx3
-from transformers import pipeline
 import subprocess
+from freeGPT import Client
+import pyaudio
+
+
+# Set audio format
+FORMAT = pyaudio.paInt16
+CHANNELS = 1
+RATE = 44100
+CHUNK = 1024
+RECORD_SECONDS = 5
+WAVE_OUTPUT_FILENAME = "file.wav"
 
 
 def chatbot_engine():
@@ -12,7 +22,7 @@ def chatbot_engine():
     engine = pyttsx3.init()
 
     # Initialize GPT model
-    generator = pipeline('text-generation', model='EleutherAI/gpt-neo-2.7B')
+    generator = Client
 
     # prompt the user for an audio response
     print("Ask me a question using your microphone")
@@ -48,7 +58,7 @@ def chatbot_engine():
 
     # Generate continuation of text using GPT
     try:
-        generated_text = generator(text, max_length=100)[0]['generated_text']
+        generated_text = generator.create_completion("gpt4", text)
     except RuntimeError:
         engine.say("I don't know what to say. Could you please try again?")
         engine.runAndWait()
@@ -59,7 +69,7 @@ def chatbot_engine():
     engine.runAndWait()
 
     # Call Blender from the command line and pass the script as an argument
-    subprocess.call(['blender', '-b', 'C:\\Users\\jmkin\\OneDrive\\Documents\\blender models\\Igor\\.blend', '-P',
+    subprocess.call(['blender', '-b', 'C:\\Users\\jmkin\\OneDrive\\Documents\\blender models\\Igor\\blender file.blend', '-P',
                      'chatbot_engine.py'])
 
     # Generate mouth-shape keyframes using Blender Rhubarb plugin
