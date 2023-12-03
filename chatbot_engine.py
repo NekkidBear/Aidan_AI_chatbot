@@ -69,7 +69,7 @@ def chatbot_engine():
     engine.runAndWait()
 
     # Call Blender from the command line and pass the script as an argument
-    subprocess.call(['blender', '-b', 'C:\\Users\\jmkin\\OneDrive\\Documents\\blender models\\Igor\\blender file.blend', '-P',
+    subprocess.call(['blender', '-b', 'assets\\graphics\\Igor\\blender file.blend', '-P',
                      'chatbot_engine.py'])
 
     # Generate mouth-shape keyframes using Blender Rhubarb plugin

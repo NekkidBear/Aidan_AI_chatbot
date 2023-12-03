@@ -1,7 +1,6 @@
 import tkinter as tk
 from chatbot_engine import chatbot_engine
 from display_screen import DisplayScreen
-import pyaudio
 
 
 class MainApp:
@@ -31,10 +30,10 @@ class MainApp:
 
     def start(self):
         # Start the chatbot engine and tkinter display
-        self.chatbot_engine.start()
         self.display_screen.start()
         self.root.update()  # update the tkinter window
         self.display_screen.load_image("assets\\graphics\\Aidan Interactive AI avatar.png", self.image_frame1)
+        self.chatbot_engine.start()
 
     def update(self):
         # Update the chatbot engine and tkinter display
