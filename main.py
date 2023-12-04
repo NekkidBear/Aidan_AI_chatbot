@@ -1,12 +1,12 @@
 import tkinter as tk
-from chatbot_engine import chatbot_engine
+from chatbot_engine import ChatbotEngine
 from display_screen import DisplayScreen
 
 
 class MainApp:
     def __init__(self, root_window):
         self.display_screen = DisplayScreen(root)
-        self.chatbot_engine = chatbot_engine()
+        self.chatbot_engine = ChatbotEngine()
         self.root = root_window
         self.root.geometry('800x600')
 
@@ -33,13 +33,16 @@ class MainApp:
         self.display_screen.start()
         self.root.update()  # update the tkinter window
         self.display_screen.load_image("assets\\graphics\\Aidan Interactive AI avatar.png", self.image_frame1)
-        self.chatbot_engine.start()
+        # Start the chatbot engine and tkinter display
+        recognized_text, generated_text = self.chatbot_engine.start()
+        self.display_screen.display_text(f"You: {recognized_text}", self.display_screen.bottom_frame)
+        self.display_screen.display_text(f"Aidan: {generated_text}", self.display_screen.bottom_frame)
 
     def update(self):
         # Update the chatbot engine and tkinter display
         recognized_text, generated_text = self.chatbot_engine.update()
-        self.display_screen.display_text(f"Recognized text: {recognized_text}", self.display_screen.bottom_frame)
-        self.display_screen.display_text(f"Generated text: {generated_text}", self.display_screen.bottom_frame)
+        self.display_screen.display_text(f"You: {recognized_text}", self.display_screen.bottom_frame)
+        self.display_screen.display_text(f"Aidan: {generated_text}", self.display_screen.bottom_frame)
 
         # Schedule the next update
         self.root.after(1000, self.update)  # Update every second
