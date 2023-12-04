@@ -3,3 +3,4 @@ transformers>=4.35.2
 Pillow>=10.1.0
 freeGPT>=1.3.4
 PyAudio>=0.2.14
+bpy>=4.0.0

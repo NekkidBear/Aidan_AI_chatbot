@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ac172a6-bbe8-44c4-a29d-37ed606d7190" name="Changes" comment="tweaking chatbot engine">
+    <list default="true" id="1ac172a6-bbe8-44c4-a29d-37ed606d7190" name="Changes" comment="integrating chatbot engine, main loop, and display screen to work as one unit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chatbot_engine.py" beforeDir="false" afterPath="$PROJECT_DIR$/chatbot_engine.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/display_screen.py" beforeDir="false" afterPath="$PROJECT_DIR$/display_screen.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -237,7 +235,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701707581358</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="integrating chatbot engine, main loop, and display screen to work as one unit">
+      <option name="closed" value="true" />
+      <created>1701709829033</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1701709829034</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -249,7 +255,8 @@
     <MESSAGE value="resizing window panes" />
     <MESSAGE value="enable freegpt" />
     <MESSAGE value="tweaking chatbot engine" />
-    <option name="LAST_COMMIT_MESSAGE" value="tweaking chatbot engine" />
+    <MESSAGE value="integrating chatbot engine, main loop, and display screen to work as one unit" />
+    <option name="LAST_COMMIT_MESSAGE" value="integrating chatbot engine, main loop, and display screen to work as one unit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
