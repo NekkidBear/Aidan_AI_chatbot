@@ -2,7 +2,7 @@ import speech_recognition as sr
 import pyttsx3
 from freeGPT import Client
 from PyQt5.QtCore import QObject, pyqtSignal
-from edge_tts import EdgeTTS  # Import the EdgeTTS class
+import edge_tts
 
 
 class ChatbotEngine(QObject):
@@ -17,7 +17,8 @@ class ChatbotEngine(QObject):
         self.engine = pyttsx3.init()
 
         # Initialize EdgeTTS engine
-        self.edge_engine = EdgeTTS()
+        self.edge_engine = edge_tts.Communicate
+        self.voice = "en-AU-WilliamNeural"
 
         # Initialize GPT model
         self.generator = Client  # Create an instance of the Client class
@@ -31,7 +32,7 @@ class ChatbotEngine(QObject):
     def start(self):
         # Start speech recognition
         self.listening = True
-        self.edge_engine.speak("Hello, My name is Aidan. How can I help you? Go ahead. I'm listening.")
+        self.edge_engine("Hello, My name is Aidan. How can I help you? Go ahead. I'm listening.", voice=self.voice)
         self.update()
 
     def stop(self):
@@ -57,11 +58,11 @@ class ChatbotEngine(QObject):
                 try:
                     audio = self.r.listen(source)
                 except sr.UnknownValueError:
-                    self.edge_engine.speak("I'm sorry, I didn't understand that. Come again?")
+                    self.edge_engine("I'm sorry, I didn't understand that. Come again?", self.voice)
                     continue
                 except sr.RequestError:
-                    self.edge_engine.speak(
-                        "Oops, I spaced out for a moment. Could you please repeat what you just said?")
+                    self.edge_engine("Oops, I spaced out for a moment. Could you please repeat what you just said?",
+                                     self.voice)
                     continue
 
                 # Convert speech to text
@@ -69,10 +70,11 @@ class ChatbotEngine(QObject):
                     text = self.r.recognize_google(audio)
                     recognized_text = text  # Assign the recognized text to the variable
                 except sr.UnknownValueError:
-                    self.edge_engine.speak("I'm sorry what? Could you repeat that?")
+                    self.edge_engine("I'm sorry what? Could you repeat that?", self.voice)
                     continue
                 except sr.RequestError:
-                    self.edge_engine.speak("Hang on. My brain is still catching up. Could you tell me that again?")
+                    self.edge_engine("Hang on. My brain is still catching up. Could you tell me that again?",
+                                     self.voice)
                     continue
 
                 # Check for stop phrases
@@ -84,11 +86,11 @@ class ChatbotEngine(QObject):
                 try:
                     generated_text = self.generator.create_completion("gpt4", text)
                 except RuntimeError:
-                    self.edge_engine.speak("I don't know what to say. Could you please try again?")
+                    self.edge_engine("I don't know what to say. Could you please try again?", self.voice)
                     continue
 
                 # Convert text to speech
-                self.edge_engine.speak(generated_text)
+                self.edge_engine(generated_text, self.voice)
 
                 # When text is recognized and generated, emit the text_generated signal
                 self.text_generated.emit(recognized_text, generated_text)
@@ -96,7 +98,7 @@ class ChatbotEngine(QObject):
                 # Decrement the counter for free questions
                 self.free_questions -= 1
                 if self.free_questions == 0:
-                    self.edge_engine.speak("I'm sorry, but I need to go. I have another call coming in.")
+                    self.edge_engine("I'm sorry, but I need to go. I have another call coming in.")
                     self.stop()
                     return None, None
 

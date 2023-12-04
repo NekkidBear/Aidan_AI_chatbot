@@ -6,10 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1ac172a6-bbe8-44c4-a29d-37ed606d7190" name="Changes" comment="rewriting display_screen.py to use pyqt5 instead of tkinter">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blender_animation_engine.py" beforeDir="false" afterPath="$PROJECT_DIR$/blender_animation_engine.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chatbot_engine.py" beforeDir="false" afterPath="$PROJECT_DIR$/chatbot_engine.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/display_screen.py" beforeDir="false" afterPath="$PROJECT_DIR$/display_screen.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -308,7 +305,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701717211539</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="rewriting display_screen.py to use pyqt5 instead of tkinter">
+      <option name="closed" value="true" />
+      <created>1701726781820</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1701726781822</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
