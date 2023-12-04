@@ -1,5 +1,6 @@
 # main.py
 from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QVBoxLayout, QWidget, QGridLayout, QFrame
+from PyQt5.QtCore import Qt
 from chatbot_engine import ChatbotEngine
 from display_screen import DisplayScreen
 
@@ -8,6 +9,10 @@ class MainWindow(QMainWindow):
     def __init__(self, parent=None):
         super(MainWindow, self).__init__(parent)
         self.setGeometry(0, 0, 800, 600)
+        self.setWindowTitle("Aidan Chat")
+
+        # Set the main window color
+        self.setStyleSheet("background-color: purple;")
 
         # Create the main layout
         self.main_widget = QWidget()
@@ -42,9 +47,15 @@ class MainApp(MainWindow):
         self.chatbot_engine = ChatbotEngine()
         self.display_screen = DisplayScreen()
 
-        # Create stop button
-        self.stop_button = QPushButton("Stop")
-        self.stop_button.clicked.connect(self.chatbot_engine.stop)
+        # Create buttons
+        self.call_button = QPushButton("Call")
+        self.pause_button = QPushButton("Pause")
+        self.end_call_button = QPushButton("End Call")
+
+        # Connect the buttons' clicked signals to the appropriate slots
+        self.call_button.clicked.connect(self.chatbot_engine.start)
+        self.pause_button.clicked.connect(self.chatbot_engine.stop)
+        self.end_call_button.clicked.connect(self.chatbot_engine.stop)
 
         # Connect the chatbot engine's text_generated signal to a slot that updates the display screen
         self.chatbot_engine.text_generated.connect(self.display_screen.display_text)
@@ -52,17 +63,19 @@ class MainApp(MainWindow):
         # Create a layout and add the widgets
         layout = QVBoxLayout()
         layout.addWidget(self.display_screen)
-        layout.addWidget(self.stop_button)
+        layout.addWidget(self.call_button)
+        layout.addWidget(self.pause_button)
+        layout.addWidget(self.end_call_button)
 
         # Add the layout to the transcript frame
         self.transcript.setLayout(layout)
+
+        # Add initial greeting
+        self.display_screen.append("Aidan: Hello, My name is Aidan. How can I help you? Go ahead. I'm listening.")
 
 
 if __name__ == "__main__":
     app = QApplication([])
     main_app = MainApp()
     main_app.show()
-    main_app.chatbot_engine.start()
-    main_app.chatbot_engine.engine.say("Hello, My name is Aidan. How can I help you? Go ahead. I'm listening.")
-    main_app.chatbot_engine.engine.runAndWait()
     app.exec_()

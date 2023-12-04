@@ -1,24 +1,21 @@
-import speech_recognition as sr
+# chatbot_engine.py
 import pyttsx3
+import speech_recognition as sr
+from PyQt5.QtCore import pyqtSignal, QThread
 from freeGPT import Client
-from PyQt5.QtCore import QObject, pyqtSignal
-import edge_tts
+import edge-tts
 
 
-class ChatbotEngine(QObject):
+class ChatbotEngine(QThread):
     text_generated = pyqtSignal(str, str)
 
     def __init__(self):
-        QObject.__init__(self)
+        QThread.__init__(self)
         # Initialize speech recognition engine
         self.r = sr.Recognizer()
 
         # Initialize text-to-speech engine
         self.engine = pyttsx3.init()
-
-        # Initialize EdgeTTS engine
-        self.edge_engine = edge_tts.Communicate
-        self.voice = "en-AU-WilliamNeural"
 
         # Initialize GPT model
         self.generator = Client  # Create an instance of the Client class
@@ -29,10 +26,11 @@ class ChatbotEngine(QObject):
         # Initialize counter for free questions
         self.free_questions = 3  # Set the number of free questions
 
-    def start(self):
+    def run(self):
         # Start speech recognition
         self.listening = True
-        self.edge_engine("Hello, My name is Aidan. How can I help you? Go ahead. I'm listening.", voice=self.voice)
+        self.engine.say("Hello, My name is Aidan. How can I help you? Go ahead. I'm listening.")
+        self.engine.runAndWait()
         self.update()
 
     def stop(self):
@@ -58,53 +56,57 @@ class ChatbotEngine(QObject):
                 try:
                     audio = self.r.listen(source)
                 except sr.UnknownValueError:
-                    self.edge_engine("I'm sorry, I didn't understand that. Come again?", voice=self.voice)
+                    self.engine.say("I'm sorry, I didn't understand that. Come again?")
+                    self.engine.runAndWait()
                     continue
                 except sr.RequestError:
-                    self.edge_engine("Oops, I spaced out for a moment. Could you please repeat what you just said?",
-                                     voice=self.voice)
+                    self.engine.say("Oops, I spaced out for a moment. Could you please repeat what you just said?")
+                    self.engine.runAndWait()
                     continue
 
-                # Convert speech to text
-                try:
-                    text = self.r.recognize_google(audio)
-                    recognized_text = text  # Assign the recognized text to the variable
-                except sr.UnknownValueError:
-                    self.edge_engine("I'm sorry what? Could you repeat that?", voice=self.voice)
-                    continue
-                except sr.RequestError:
-                    self.edge_engine("Hang on. My brain is still catching up. Could you tell me that again?",
-                                     voice=self.voice)
-                    continue
+            # Convert speech to text
+            try:
+                text = self.r.recognize_google(audio)
+                recognized_text = text  # Assign the recognized text to the variable
+            except sr.UnknownValueError:
+                self.engine.say("I'm sorry what? Could you repeat that?")
+                self.engine.runAndWait()
+                continue
+            except sr.RequestError:
+                self.engine.say("Hang on. My brain is still catching up. Could you tell me that again?")
+                self.engine.runAndWait()
+                continue
 
-                # Check for stop phrases
-                if text.lower() == "that's all for now, aidan":
-                    self.stop()
-                    return None, None
+            # Check for stop phrases
+            if text.lower() == "that's all for now, aidan":
+                self.stop()
+                return None, None
 
-                # Generate continuation of text using GPT
-                try:
-                    generated_text = self.generator.create_completion("gpt4", text)
-                except RuntimeError:
-                    self.edge_engine("I don't know what to say. Could you please try again?", voice=self.voice)
-                    continue
+            # Generate continuation of text using GPT
+            try:
+                generated_text = self.generator.create_completion("gpt4", text)
+            except RuntimeError:
+                self.engine.say("I don't know what to say. Could you please try again?")
+                self.engine.runAndWait()
+                continue
 
-                # Convert text to speech
-                self.edge_engine(generated_text, voice=self.voice)
+            # Convert text to speech
+            self.engine.say(generated_text)
+            self.engine.runAndWait()
+            # When text is recognized and generated, emit the text_generated signal
+            self.text_generated.emit(recognized_text, generated_text)
 
-                # When text is recognized and generated, emit the text_generated signal
-                self.text_generated.emit(recognized_text, generated_text)
+            # Decrement the counter for free questions
+            self.free_questions -= 1
+            if self.free_questions == 0:
+                self.engine.say("I'm sorry, but I need to go. I have another call coming in.")
+                self.engine.runAndWait()
+                self.stop()
+                return None, None
 
-                # Decrement the counter for free questions
-                self.free_questions -= 1
-                if self.free_questions == 0:
-                    self.edge_engine("I'm sorry, but I need to go. I have another call coming in.", voice=self.voice)
-                    self.stop()
-                    return None, None
-
-                # Wait for the next vocal input
-                if text.lower() == "aidan, your thoughts?":
-                    continue
+            # Wait for the next vocal input
+            if text.lower() == "aidan, your thoughts?":
+                continue
 
         # Return the recognized and generated text
         return recognized_text, generated_text
