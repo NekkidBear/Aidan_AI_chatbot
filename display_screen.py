@@ -6,5 +6,5 @@ class DisplayScreen(QTextEdit):
     def __init__(self, parent=None):
         super(DisplayScreen, self).__init__(parent)
 
-    def display_text(self, text):
-        self.append(text)
+    def display_text(self, recognized_text, generated_text):
+        self.append(f"You: {recognized_text}\nAidan: {generated_text}")

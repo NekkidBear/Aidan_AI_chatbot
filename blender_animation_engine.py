@@ -1,6 +1,5 @@
-import subprocess
-import os
 import shutil
+import subprocess
 
 
 def blender_animation_engine(blender_file, script_file):
