@@ -1,9 +1,8 @@
 # chatbot_engine.py
-import pyttsx3
 import speech_recognition as sr
-from PyQt5.QtCore import pyqtSignal, QThread
+import edge_tts
 from freeGPT import Client
-import edge-tts
+from PyQt5.QtCore import QObject, pyqtSignal, QThread
 
 
 class ChatbotEngine(QThread):
@@ -15,7 +14,9 @@ class ChatbotEngine(QThread):
         self.r = sr.Recognizer()
 
         # Initialize text-to-speech engine
-        self.engine = pyttsx3.init()
+        text = "Hello, My Name is Aidan. How can I help you today?"
+        self.engine = edge_tts.Communicate
+        self.voice = "en-AU-WilliamNeural"
 
         # Initialize GPT model
         self.generator = Client  # Create an instance of the Client class
@@ -29,8 +30,7 @@ class ChatbotEngine(QThread):
     def run(self):
         # Start speech recognition
         self.listening = True
-        self.engine.say("Hello, My name is Aidan. How can I help you? Go ahead. I'm listening.")
-        self.engine.runAndWait()
+        self.engine(text="Hello, My name is Aidan. How can I help you? Go ahead. I'm listening.", voice=self.voice)
         self.update()
 
     def stop(self):
@@ -56,11 +56,12 @@ class ChatbotEngine(QThread):
                 try:
                     audio = self.r.listen(source)
                 except sr.UnknownValueError:
-                    self.engine.say("I'm sorry, I didn't understand that. Come again?")
+                    self.engine(text="I'm sorry, I didn't understand that. Come again?", voice=self.voice)
                     self.engine.runAndWait()
                     continue
                 except sr.RequestError:
-                    self.engine.say("Oops, I spaced out for a moment. Could you please repeat what you just said?")
+                    self.engine(text="Oops, I spaced out for a moment. Could you please repeat what you just said?",
+                                voice=self.voice)
                     self.engine.runAndWait()
                     continue
 
@@ -69,11 +70,12 @@ class ChatbotEngine(QThread):
                 text = self.r.recognize_google(audio)
                 recognized_text = text  # Assign the recognized text to the variable
             except sr.UnknownValueError:
-                self.engine.say("I'm sorry what? Could you repeat that?")
+                self.engine(text="I'm sorry what? Could you repeat that?", voice=self.voice)
                 self.engine.runAndWait()
                 continue
             except sr.RequestError:
-                self.engine.say("Hang on. My brain is still catching up. Could you tell me that again?")
+                self.engine(text="Hang on. My brain is still catching up. Could you tell me that again?",
+                            voice=self.voice)
                 self.engine.runAndWait()
                 continue
 
@@ -86,12 +88,12 @@ class ChatbotEngine(QThread):
             try:
                 generated_text = self.generator.create_completion("gpt4", text)
             except RuntimeError:
-                self.engine.say("I don't know what to say. Could you please try again?")
+                self.engine(text="I don't know what to say. Could you please try again?", voice=self.voice)
                 self.engine.runAndWait()
                 continue
 
             # Convert text to speech
-            self.engine.say(generated_text)
+            self.engine(text=generated_text, voice=self.voice)
             self.engine.runAndWait()
             # When text is recognized and generated, emit the text_generated signal
             self.text_generated.emit(recognized_text, generated_text)
@@ -99,7 +101,7 @@ class ChatbotEngine(QThread):
             # Decrement the counter for free questions
             self.free_questions -= 1
             if self.free_questions == 0:
-                self.engine.say("I'm sorry, but I need to go. I have another call coming in.")
+                self.engine(text="I'm sorry, but I need to go. I have another call coming in.", voice=self.voice)
                 self.engine.runAndWait()
                 self.stop()
                 return None, None
