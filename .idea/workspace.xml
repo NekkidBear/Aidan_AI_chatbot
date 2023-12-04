@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ac172a6-bbe8-44c4-a29d-37ed606d7190" name="Changes" comment="integrating chatbot engine, main loop, and display screen to work as one unit">
+    <list default="true" id="1ac172a6-bbe8-44c4-a29d-37ed606d7190" name="Changes" comment="implementing stop features in chatbot_engine.py">
+      <change beforePath="$PROJECT_DIR$/.idea/Aidan_AI_chatbot.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Aidan_AI_chatbot.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blender_animation_engine.py" beforeDir="false" afterPath="$PROJECT_DIR$/blender_animation_engine.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chatbot_engine.py" beforeDir="false" afterPath="$PROJECT_DIR$/chatbot_engine.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -261,7 +261,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701711288181</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="implementing stop features in chatbot_engine.py">
+      <option name="closed" value="true" />
+      <created>1701713765093</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1701713765093</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -274,7 +282,8 @@
     <MESSAGE value="enable freegpt" />
     <MESSAGE value="tweaking chatbot engine" />
     <MESSAGE value="integrating chatbot engine, main loop, and display screen to work as one unit" />
-    <option name="LAST_COMMIT_MESSAGE" value="integrating chatbot engine, main loop, and display screen to work as one unit" />
+    <MESSAGE value="implementing stop features in chatbot_engine.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="implementing stop features in chatbot_engine.py" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
