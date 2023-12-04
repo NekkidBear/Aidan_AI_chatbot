@@ -5,10 +5,10 @@ from display_screen import DisplayScreen
 
 class MainApp:
     def __init__(self, root_window):
+        self.display_screen = DisplayScreen(root)
         self.chatbot_engine = chatbot_engine()
         self.root = root_window
         self.root.geometry('800x600')
-        self.display_screen = DisplayScreen(root)
 
         # Create frames for the image, web browser, and chat transcript with MS Teams dark mode colors
         self.web_frame = tk.Frame(root, bg="#201f1f", highlightbackground="#464775", highlightthickness=1)
@@ -37,8 +37,9 @@ class MainApp:
 
     def update(self):
         # Update the chatbot engine and tkinter display
-        self.chatbot_engine.update()
-        self.display_screen.update()
+        recognized_text, generated_text = self.chatbot_engine.update()
+        self.display_screen.display_text(f"Recognized text: {recognized_text}", self.display_screen.bottom_frame)
+        self.display_screen.display_text(f"Generated text: {generated_text}", self.display_screen.bottom_frame)
 
         # Schedule the next update
         self.root.after(1000, self.update)  # Update every second

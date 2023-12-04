@@ -48,7 +48,7 @@ def chatbot_engine():
     try:
         text = r.recognize_google(audio)
     except sr.UnknownValueError:
-        engine.say("I'm sorry what? Could you repeat that?")
+        engine.say("I'm sorry, what? Could you repeat that?")
         engine.runAndWait()
         return
     except sr.RequestError:
@@ -69,7 +69,7 @@ def chatbot_engine():
     engine.runAndWait()
 
     # Call Blender from the command line and pass the script as an argument
-    subprocess.call(['blender', '-b', 'assets\\graphics\\Igor\\blender file.blend', '-P',
+    subprocess.call(['blender', '-b', 'C:\\Program Files\\Blender Foundation\\Blender 4.0\\blender.exe', '-P',
                      'chatbot_engine.py'])
 
     # Generate mouth-shape keyframes using Blender Rhubarb plugin
@@ -78,3 +78,6 @@ def chatbot_engine():
     # Use the generated mouth-shape keyframes to animate the mouth of your 3D character in Blender
     print(f"Recognized text: {text}")
     print(f"Generated text: {generated_text}")
+
+    # Return the recognized and generated text
+    return text, generated_text
