@@ -58,11 +58,11 @@ class ChatbotEngine(QObject):
                 try:
                     audio = self.r.listen(source)
                 except sr.UnknownValueError:
-                    self.edge_engine("I'm sorry, I didn't understand that. Come again?", self.voice)
+                    self.edge_engine("I'm sorry, I didn't understand that. Come again?", voice=self.voice)
                     continue
                 except sr.RequestError:
                     self.edge_engine("Oops, I spaced out for a moment. Could you please repeat what you just said?",
-                                     self.voice)
+                                     voice=self.voice)
                     continue
 
                 # Convert speech to text
@@ -70,11 +70,11 @@ class ChatbotEngine(QObject):
                     text = self.r.recognize_google(audio)
                     recognized_text = text  # Assign the recognized text to the variable
                 except sr.UnknownValueError:
-                    self.edge_engine("I'm sorry what? Could you repeat that?", self.voice)
+                    self.edge_engine("I'm sorry what? Could you repeat that?", voice=self.voice)
                     continue
                 except sr.RequestError:
                     self.edge_engine("Hang on. My brain is still catching up. Could you tell me that again?",
-                                     self.voice)
+                                     voice=self.voice)
                     continue
 
                 # Check for stop phrases
@@ -86,11 +86,11 @@ class ChatbotEngine(QObject):
                 try:
                     generated_text = self.generator.create_completion("gpt4", text)
                 except RuntimeError:
-                    self.edge_engine("I don't know what to say. Could you please try again?", self.voice)
+                    self.edge_engine("I don't know what to say. Could you please try again?", voice=self.voice)
                     continue
 
                 # Convert text to speech
-                self.edge_engine(generated_text, self.voice)
+                self.edge_engine(generated_text, voice=self.voice)
 
                 # When text is recognized and generated, emit the text_generated signal
                 self.text_generated.emit(recognized_text, generated_text)
@@ -98,7 +98,7 @@ class ChatbotEngine(QObject):
                 # Decrement the counter for free questions
                 self.free_questions -= 1
                 if self.free_questions == 0:
-                    self.edge_engine("I'm sorry, but I need to go. I have another call coming in.")
+                    self.edge_engine("I'm sorry, but I need to go. I have another call coming in.", voice=self.voice)
                     self.stop()
                     return None, None
 
@@ -106,5 +106,5 @@ class ChatbotEngine(QObject):
                 if text.lower() == "aidan, your thoughts?":
                     continue
 
-            # Return the recognized and generated text
-            return recognized_text, generated_text
+        # Return the recognized and generated text
+        return recognized_text, generated_text

@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ac172a6-bbe8-44c4-a29d-37ed606d7190" name="Changes" comment="rewriting display_screen.py to use pyqt5 instead of tkinter">
+    <list default="true" id="1ac172a6-bbe8-44c4-a29d-37ed606d7190" name="Changes" comment="rewriting chatbot_engine.py to use edge-tts as the voice generator">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chatbot_engine.py" beforeDir="false" afterPath="$PROJECT_DIR$/chatbot_engine.py" afterDir="false" />
     </list>
@@ -313,7 +313,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701726781822</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="rewriting chatbot_engine.py to use edge-tts as the voice generator">
+      <option name="closed" value="true" />
+      <created>1701728941818</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1701728941820</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -328,7 +336,8 @@
     <MESSAGE value="integrating chatbot engine, main loop, and display screen to work as one unit" />
     <MESSAGE value="implementing stop features in chatbot_engine.py" />
     <MESSAGE value="rewriting display_screen.py to use pyqt5 instead of tkinter" />
-    <option name="LAST_COMMIT_MESSAGE" value="rewriting display_screen.py to use pyqt5 instead of tkinter" />
+    <MESSAGE value="rewriting chatbot_engine.py to use edge-tts as the voice generator" />
+    <option name="LAST_COMMIT_MESSAGE" value="rewriting chatbot_engine.py to use edge-tts as the voice generator" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
