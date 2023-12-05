@@ -1,8 +1,9 @@
 # chatbot_engine.py
+import pyttsx3
 import speech_recognition as sr
-from edge_tts import EdgeTTS
+from PyQt5.QtCore import pyqtSignal, QThread
 from freeGPT import Client
-from PyQt5.QtCore import QObject, pyqtSignal, QThread
+
 
 class ChatbotEngine(QThread):
     text_generated = pyqtSignal(str, str)
@@ -13,10 +14,10 @@ class ChatbotEngine(QThread):
         self.r = sr.Recognizer()
 
         # Initialize text-to-speech engine
-        self.engine = EdgeTTS("en-AU-WilliamNeural")
+        self.engine = pyttsx3.init()
 
         # Initialize GPT model
-        self.generator = Client()  # Create an instance of the Client class
+        self.generator = Client  # Create an instance of the Client class
 
         # Initialize flag to control speech recognition
         self.listening = False
@@ -28,6 +29,7 @@ class ChatbotEngine(QThread):
         # Start speech recognition
         self.listening = True
         self.engine.say("Hello, My name is Aidan. How can I help you? Go ahead. I'm listening.")
+        self.engine.runAndWait()
         self.update()
 
     def stop(self):

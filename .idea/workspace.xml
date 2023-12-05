@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ac172a6-bbe8-44c4-a29d-37ed606d7190" name="Changes" comment="rewriting chatbot_engine.py to use edge-tts as the voice generator">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="1ac172a6-bbe8-44c4-a29d-37ed606d7190" name="Changes" comment="switching back to pytts3.">
       <change beforePath="$PROJECT_DIR$/chatbot_engine.py" beforeDir="false" afterPath="$PROJECT_DIR$/chatbot_engine.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -337,7 +336,23 @@
       <option name="project" value="LOCAL" />
       <updated>1701733392411</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="rewriting chatbot_engine.py to use edge-tts as the voice generator">
+      <option name="closed" value="true" />
+      <created>1701734253218</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1701734253218</updated>
+    </task>
+    <task id="LOCAL-00036" summary="switching back to pytts3.">
+      <option name="closed" value="true" />
+      <created>1701734321164</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1701734321164</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -353,7 +368,8 @@
     <MESSAGE value="implementing stop features in chatbot_engine.py" />
     <MESSAGE value="rewriting display_screen.py to use pyqt5 instead of tkinter" />
     <MESSAGE value="rewriting chatbot_engine.py to use edge-tts as the voice generator" />
-    <option name="LAST_COMMIT_MESSAGE" value="rewriting chatbot_engine.py to use edge-tts as the voice generator" />
+    <MESSAGE value="switching back to pytts3." />
+    <option name="LAST_COMMIT_MESSAGE" value="switching back to pytts3." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
