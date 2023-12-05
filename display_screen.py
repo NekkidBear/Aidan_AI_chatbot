@@ -4,13 +4,15 @@ from PyQt5.QtGui import QTextCursor
 from PyQt5.QtCore import Qt, QUrl
 from PyQt5.QtWebEngineWidgets import QWebEngineView
 
+
 class DisplayScreen(QWidget):
     def __init__(self, parent=None):
         super(DisplayScreen, self).__init__(parent)
 
         # Create a QTextEdit for the transcript
         self.transcript = QTextEdit()
-        self.transcript.setStyleSheet("background-color: #333; color: white;")  # Set the background color to charcoal-gray and the text color to white
+        self.transcript.setStyleSheet(
+            "background-color: #333; color: white;")  # Set the background color to charcoal-gray and the text color to white
         self.transcript.setReadOnly(True)
 
         # Create a QWebEngineView for the web browser

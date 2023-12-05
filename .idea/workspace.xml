@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ac172a6-bbe8-44c4-a29d-37ed606d7190" name="Changes" comment="switching back to pytts3.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-    </list>
+    <list default="true" id="1ac172a6-bbe8-44c4-a29d-37ed606d7190" name="Changes" comment="add browser object and URL detection" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -366,7 +363,23 @@
       <option name="project" value="LOCAL" />
       <updated>1701734565347</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="Adding Q Label for avatar image">
+      <option name="closed" value="true" />
+      <created>1701735425884</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1701735425886</updated>
+    </task>
+    <task id="LOCAL-00039" summary="add browser object and URL detection">
+      <option name="closed" value="true" />
+      <created>1701736105150</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1701736105151</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -394,14 +407,16 @@
     <MESSAGE value="rewriting display_screen.py to use pyqt5 instead of tkinter" />
     <MESSAGE value="rewriting chatbot_engine.py to use edge-tts as the voice generator" />
     <MESSAGE value="switching back to pytts3." />
-    <option name="LAST_COMMIT_MESSAGE" value="switching back to pytts3." />
+    <MESSAGE value="Adding Q Label for avatar image" />
+    <MESSAGE value="add browser object and URL detection" />
+    <option name="LAST_COMMIT_MESSAGE" value="add browser object and URL detection" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main.py</url>
-          <line>82</line>
+          <line>92</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -410,17 +425,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/display_screen.py</url>
-          <line>11</line>
+          <line>25</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main.py</url>
-          <line>80</line>
+          <line>90</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main.py</url>
-          <line>47</line>
+          <line>57</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
