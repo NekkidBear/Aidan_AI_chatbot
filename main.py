@@ -44,7 +44,7 @@ class MainWindow(QMainWindow):
         image_label = QLabel()
 
         # Load the image into a QPixmap
-        pixmap = QPixmap('path_to_your_image_file')
+        pixmap = QPixmap('assets/graphics/aidan interactive ai avatar.png')
 
         # Set the QPixmap as the content of the QLabel
         image_label.setPixmap(pixmap)
