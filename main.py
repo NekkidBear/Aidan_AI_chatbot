@@ -67,7 +67,7 @@ class MainApp(MainWindow):
         self.end_call_button = QPushButton("End Call")
 
         # Connect the buttons' clicked signals to the appropriate slots
-        self.call_button.clicked.connect(self.chatbot_engine.start)
+        self.call_button.clicked.connect(self.on_call_button_clicked)
         self.pause_button.clicked.connect(self.chatbot_engine.stop)
         self.end_call_button.clicked.connect(self.chatbot_engine.stop)
 
@@ -85,7 +85,11 @@ class MainApp(MainWindow):
         self.transcript.setLayout(layout)
 
         # Add initial greeting
-        self.display_screen.append("Aidan: Hello, My name is Aidan. How can I help you? Go ahead. I'm listening.")
+        self.display_screen.display_text("", "Aidan: Hello, My name is Aidan. How can I help you? Go ahead. I'm listening.")
+
+    def on_call_button_clicked(self):
+        self.chatbot_engine.start()
+        self.display_screen.display_text("", "Aidan: The call has started. How can I assist you today?")
 
 
 if __name__ == "__main__":
