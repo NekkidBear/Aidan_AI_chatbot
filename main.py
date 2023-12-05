@@ -1,6 +1,6 @@
 # main.py
-from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QVBoxLayout, QWidget, QGridLayout, QFrame
-from PyQt5.QtCore import Qt
+from PyQt5.QtGui import QPixmap
+from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QVBoxLayout, QWidget, QGridLayout, QFrame, QLabel
 from chatbot_engine import ChatbotEngine
 from display_screen import DisplayScreen
 
@@ -39,6 +39,20 @@ class MainWindow(QMainWindow):
 
         # Set the layout
         self.main_widget.setLayout(self.main_layout)
+
+        # Create a QLabel object
+        image_label = QLabel()
+
+        # Load the image into a QPixmap
+        pixmap = QPixmap('path_to_your_image_file')
+
+        # Set the QPixmap as the content of the QLabel
+        image_label.setPixmap(pixmap)
+
+        # Add the QLabel to your layout
+        ai_avatar_layout = QVBoxLayout()
+        ai_avatar_layout.addWidget(image_label)
+        self.ai_avatar.setLayout(ai_avatar_layout)
 
 
 class MainApp(MainWindow):
